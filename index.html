@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LRT Consultoria Financeira | Planejamento, controle e estratégia</title>
+    <meta
+      name="description"
+      content="Consultoria financeira para empresas que precisam de clareza, planejamento, controle financeiro e decisões estratégicas com base em números."
+    />
+    <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/9aa7a5_d831c4834def414c93930142c5e7ff5f~mv2.png" />
+    <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/9aa7a5_d831c4834def414c93930142c5e7ff5f~mv2.png" />
+    <style>
+:root {
+  --ink: #16122a;
+  --muted: #675f75;
+  --paper: #fff9f6;
+  --panel: #ffffff;
+  --line: rgba(31, 24, 54, 0.12);
+  --purple: #a84fe3;
+  --pink: #ef7ea2;
+  --coral: #ff8d64;
+  --gold: #e7bd45;
+  --blue: #36b9ef;
+  --shadow: 0 18px 60px rgba(43, 25, 69, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 82px;
+  padding: 12px clamp(18px, 5vw, 72px);
+  background: rgba(255, 249, 246, 0.9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.brand img {
+  width: 112px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.nav a:hover {
+  color: var(--purple);
+}
+
+.header-cta,
+.btn,
+.contact-form button {
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.header-cta {
+  padding: 12px 18px;
+  color: white;
+  background: linear-gradient(135deg, var(--purple), var(--coral));
+  box-shadow: 0 10px 26px rgba(168, 79, 227, 0.25);
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 82px);
+  display: grid;
+  grid-template-columns: minmax(0, 760px) minmax(260px, 360px);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(72px, 10vw, 132px) clamp(18px, 5vw, 72px) 72px;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(105deg, rgba(22, 18, 42, 0.92), rgba(22, 18, 42, 0.58) 58%, rgba(22, 18, 42, 0.72)),
+    url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=82") center/cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -22% 18%;
+  height: 360px;
+  background: radial-gradient(circle, rgba(168, 79, 227, 0.42), transparent 62%);
+}
+
+.hero-content,
+.hero-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 4.9rem);
+  line-height: 1;
+}
+
+.hero-copy {
+  max-width: 710px;
+  margin: 26px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 22px;
+}
+
+.btn.primary {
+  color: white;
+  background: linear-gradient(135deg, var(--purple), var(--pink), var(--coral));
+}
+
+.btn.secondary {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.hero-panel {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+.hero-panel div {
+  padding: 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.metric-label {
+  display: block;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.85rem;
+}
+
+.hero-panel strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.2rem;
+}
+
+section {
+  padding: 86px clamp(18px, 5vw, 72px);
+}
+
+.intro,
+.solutions,
+.method,
+.profile,
+.content-section {
+  background: var(--paper);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(300px, 1fr);
+  gap: clamp(32px, 6vw, 92px);
+  align-items: start;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--muted);
+}
+
+.text-stack p {
+  margin: 0 0 18px;
+  font-size: 1.08rem;
+}
+
+.trust-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  padding: 0 clamp(18px, 5vw, 72px);
+  background: var(--line);
+}
+
+.trust-band div {
+  padding: 34px 28px;
+  background: #211935;
+}
+
+.trust-band strong {
+  display: block;
+  color: white;
+  font-size: 1.45rem;
+}
+
+.trust-band span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.section-heading {
+  max-width: 850px;
+  margin-bottom: 38px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card,
+.method-steps article,
+.article-grid article,
+.contact-form {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.service-card {
+  min-height: 255px;
+  padding: 28px;
+}
+
+.service-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 34px;
+  color: white;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--purple), var(--gold));
+  font-weight: 900;
+}
+
+.service-card p,
+.method-steps p,
+.article-grid p {
+  margin-bottom: 0;
+}
+
+.cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(168, 79, 227, 0.95), rgba(239, 126, 162, 0.92), rgba(255, 141, 100, 0.92)),
+    #a84fe3;
+}
+
+.cta-strip .section-kicker,
+.cta-strip h2 {
+  color: white;
+}
+
+.cta-strip .btn.primary {
+  flex: 0 0 auto;
+  color: var(--ink);
+  background: white;
+}
+
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.method-steps article {
+  padding: 26px;
+}
+
+.method-steps span {
+  display: block;
+  margin-bottom: 26px;
+  color: var(--purple);
+  font-size: 2rem;
+  font-weight: 950;
+}
+
+.profile {
+  padding-top: 0;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(168, 79, 227, 0.08), rgba(255, 141, 100, 0.08)),
+    white;
+  box-shadow: var(--shadow);
+}
+
+.profile-logo {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: 8px;
+  background: #211935;
+}
+
+.profile-logo img {
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+}
+
+.profile-title {
+  max-width: 850px;
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 780;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--purple);
+  font-weight: 850;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.article-grid article {
+  padding: 26px;
+}
+
+.article-grid p {
+  margin-top: 0;
+  color: var(--purple);
+  font-weight: 850;
+}
+
+.article-grid a {
+  display: inline-flex;
+  margin-top: 24px;
+  color: var(--coral);
+  font-weight: 850;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 540px);
+  gap: clamp(28px, 5vw, 72px);
+  background: #211935;
+  color: white;
+}
+
+.contact p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-info {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  color: white;
+  font-weight: 750;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: 28px;
+  color: var(--ink);
+}
+
+.contact-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px 14px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid rgba(168, 79, 227, 0.18);
+  border-color: var(--purple);
+}
+
+.contact-form button {
+  min-height: 52px;
+  color: white;
+  background: linear-gradient(135deg, var(--purple), var(--coral));
+  font: inherit;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px clamp(18px, 5vw, 72px);
+  background: #16122a;
+}
+
+.footer img {
+  width: 92px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .hero,
+  .split,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    align-items: start;
+  }
+
+  .cards-grid,
+  .method-steps,
+  .article-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-logo {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+  }
+
+  .brand img {
+    width: 92px;
+  }
+
+  .header-cta {
+    margin-left: auto;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding-top: 64px;
+  }
+
+  .hero h1 {
+    font-size: 2.55rem;
+  }
+
+  .hero-panel {
+    display: none;
+  }
+
+  .trust-band,
+  .cards-grid,
+  .method-steps,
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-strip,
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="LRT Consultoria Financeira">
+        <img src="https://static.wixstatic.com/media/9aa7a5_d831c4834def414c93930142c5e7ff5f~mv2.png" alt="LRT Consultoria Financeira" />
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Consultoria</a>
+        <a href="#metodo">Método</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="header-cta" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
+        Falar no WhatsApp
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Consultoria financeira estratégica</p>
+          <h1>Clareza financeira para decidir melhor, crescer com controle e proteger margem.</h1>
+          <p class="hero-copy">
+            A LRT ajuda empresas a organizar números, entender resultados e tomar decisões com mais
+            segurança por meio de planejamento, análise financeira e controle de gestão.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
+              Solicitar consultoria
+            </a>
+            <a class="btn secondary" href="#servicos">Conhecer consultoria</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Indicadores de gestão">
+          <div>
+            <span class="metric-label">Fluxo de caixa</span>
+            <strong>+ Clareza</strong>
+          </div>
+          <div>
+            <span class="metric-label">Processos manuais</span>
+            <strong>- Retrabalho</strong>
+          </div>
+          <div>
+            <span class="metric-label">Planejamento</span>
+            <strong>Decisão com fundamento</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro" id="sobre">
+        <div class="section-kicker">Sobre a LRT</div>
+        <div class="split">
+          <div>
+            <h2>Mais do que relatórios, entregamos direção.</h2>
+          </div>
+          <div class="text-stack">
+            <p>
+              Empresas já possuem números, mas muitas ainda sofrem para transformar essas informações
+              em leitura financeira, prioridades e decisão. A LRT atua exatamente nesse ponto:
+              organiza a base financeira, estrutura análises e cria uma rotina de controle.
+            </p>
+            <p>
+              Nosso trabalho une consultoria financeira, planejamento, análise de investimentos,
+              mercado financeiro e gestão estratégica para orientar empresas com mais clareza.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-band">
+        <div>
+          <strong>Controle</strong>
+          <span>rotinas financeiras acompanhadas com clareza</span>
+        </div>
+        <div>
+          <strong>Previsibilidade</strong>
+          <span>dados organizados para planejar melhor</span>
+        </div>
+        <div>
+          <strong>Eficiência</strong>
+          <span>menos decisões no escuro, mais análise</span>
+        </div>
+      </section>
+
+      <section class="solutions" id="servicos">
+        <div class="section-heading">
+          <p class="section-kicker">Consultoria financeira</p>
+          <h2>Serviços para empresas que precisam enxergar resultado, caixa e futuro.</h2>
+        </div>
+        <div class="cards-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3>Diagnóstico Financeiro</h3>
+            <p>
+              Análise da situação atual da empresa, identificação de riscos, gargalos, oportunidades
+              de melhoria e prioridades financeiras.
+            </p>
+          </article>
+          <article class="service-card">
+            <span>02</span>
+            <h3>Fluxo de Caixa</h3>
+            <p>
+              Organização de entradas, saídas, compromissos e projeções para melhorar previsibilidade
+              e reduzir surpresas no caixa.
+            </p>
+          </article>
+          <article class="service-card">
+            <span>03</span>
+            <h3>Planejamento e Controle</h3>
+            <p>
+              Construção de metas, orçamento, acompanhamento de resultados e análise de desvios para
+              apoiar decisões recorrentes.
+            </p>
+          </article>
+          <article class="service-card">
+            <span>04</span>
+            <h3>Análise de Custos e Margens</h3>
+            <p>
+              Leitura de custos, despesas, precificação e margem para entender o que realmente gera
+              resultado na operação.
+            </p>
+          </article>
+          <article class="service-card">
+            <span>05</span>
+            <h3>Análise de Investimentos</h3>
+            <p>
+              Avaliação financeira de projetos, cenários e decisões de alocação de capital, sempre
+              conectada aos objetivos da empresa.
+            </p>
+          </article>
+          <article class="service-card">
+            <span>06</span>
+            <h3>Indicadores Financeiros</h3>
+            <p>
+              Definição e acompanhamento de indicadores de caixa, rentabilidade, endividamento,
+              eficiência e desempenho financeiro.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-strip">
+        <div>
+          <p class="section-kicker">Reunião estratégica</p>
+          <h2>Quanto custa tomar decisões financeiras sem clareza?</h2>
+        </div>
+        <a class="btn primary" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
+          Agendar conversa
+        </a>
+      </section>
+
+      <section class="method" id="metodo">
+        <div class="section-heading">
+          <p class="section-kicker">Metodologia</p>
+          <h2>Um processo objetivo para transformar números em estratégia financeira.</h2>
+        </div>
+        <div class="method-steps">
+          <article>
+            <span>1</span>
+            <h3>Diagnóstico</h3>
+            <p>Entendemos a operação, os controles atuais e os pontos críticos da gestão.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Organização</h3>
+            <p>Estruturamos caixa, custos, receitas, despesas e indicadores essenciais.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Planejamento</h3>
+            <p>Criamos metas, projeções e cenários para orientar decisões financeiras.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Acompanhamento</h3>
+            <p>Transformamos indicadores em leitura estratégica para apoiar a gestão.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="profile" id="perfil">
+        <div class="profile-card">
+          <div class="profile-logo">
+            <img src="https://static.wixstatic.com/media/9aa7a5_d831c4834def414c93930142c5e7ff5f~mv2.png" alt="LRT Consultoria Financeira" />
+          </div>
+          <div>
+            <p class="section-kicker">Perfil profissional</p>
+            <h2>Leidiane Rodrigues Teixeira</h2>
+            <p class="profile-title">
+              Especialista em Finanças, Gestão Estratégica, Mercado Financeiro, Análise de
+              Investimentos, Planejamento e Controle.
+            </p>
+            <p>
+              A LRT nasce de uma visão prática: finanças não devem ser apenas registros do passado,
+              mas uma base de leitura para antecipar riscos, preservar margem e decidir com
+              consistência.
+            </p>
+            <a
+              class="linkedin-link"
+              href="https://www.linkedin.com/in/leidiane-rodrigues-teixeira/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver perfil no LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="conteudos">
+        <div class="section-heading">
+          <p class="section-kicker">Artigos e materiais</p>
+          <h2>Conteúdos para melhorar sua tomada de decisão financeira.</h2>
+        </div>
+        <div class="article-grid">
+          <article>
+            <p>Fluxo de caixa</p>
+            <h3>Como identificar gargalos financeiros antes que eles virem urgência</h3>
+            <a href="#contato">Quero orientação</a>
+          </article>
+          <article>
+            <p>Indicadores</p>
+            <h3>Os números que toda empresa deveria acompanhar semanalmente</h3>
+            <a href="#contato">Quero orientação</a>
+          </article>
+          <article>
+            <p>Estratégia</p>
+            <h3>Como separar ruído de informação relevante na gestão financeira</h3>
+            <a href="#contato">Quero orientação</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="contact-copy">
+          <p class="section-kicker">Contato</p>
+          <h2>Fale com a LRT e dê o próximo passo na gestão da sua empresa.</h2>
+          <p>
+            Envie uma mensagem para iniciar uma conversa sobre consultoria financeira, planejamento,
+            controle, análise de custos, margens e decisões estratégicas.
+          </p>
+          <div class="contact-info">
+            <a href="mailto:lrtconsultoriafinanceira@gmail.com">lrtconsultoriafinanceira@gmail.com</a>
+            <a href="tel:+5531996242304">+55 (31) 99624-2304</a>
+            <span>Pampulha, Belo Horizonte - MG</span>
+          </div>
+        </div>
+        <form class="contact-form">
+          <label>
+            Nome
+            <input type="text" name="nome" placeholder="Seu nome" />
+          </label>
+          <label>
+            E-mail
+            <input type="email" name="email" placeholder="seu@email.com" />
+          </label>
+          <label>
+            WhatsApp
+            <input type="tel" name="whatsapp" placeholder="(31) 00000-0000" />
+          </label>
+          <label>
+            Mensagem
+            <textarea name="mensagem" rows="4" placeholder="Conte rapidamente o que sua empresa precisa"></textarea>
+          </label>
+          <button type="submit">Enviar mensagem</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="https://static.wixstatic.com/media/9aa7a5_d831c4834def414c93930142c5e7ff5f~mv2.png" alt="LRT Consultoria Financeira" />
+      <p>© 2026 LRT Consultoria Financeira. Todos os direitos reservados.</p>
+    </footer>
+<script>
+const form = document.querySelector(".contact-form");
+
+form?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const data = new FormData(form);
+  const nome = data.get("nome") || "";
+  const email = data.get("email") || "";
+  const whatsapp = data.get("whatsapp") || "";
+  const mensagem = data.get("mensagem") || "";
+
+  const texto = [
+    "Olá, LRT Consultoria Financeira.",
+    `Meu nome é ${nome}.`,
+    email ? `E-mail: ${email}` : "",
+    whatsapp ? `WhatsApp: ${whatsapp}` : "",
+    mensagem ? `Mensagem: ${mensagem}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  window.open(`https://wa.me/5531996242304?text=${encodeURIComponent(texto)}`, "_blank", "noopener,noreferrer");
+});
+
+</script>
+  </body>
+</html>
