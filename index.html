@@ -78,10 +78,10 @@ img {
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 10px 18px;
+  gap: 10px 14px;
   margin-left: auto;
   color: #536176;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 780;
 }
 
@@ -108,7 +108,7 @@ img {
 
 .nav .nav-cta {
   color: white;
-  padding: 11px 18px;
+  padding: 11px 16px;
 }
 
 .hero {
@@ -311,6 +311,7 @@ li {
 
 .purpose,
 .mvv,
+.speaking,
 .digital,
 .method,
 .differentials,
@@ -344,6 +345,7 @@ li {
 .solution-card,
 .mvv-card,
 .value-card,
+.speaking-card,
 .steps article,
 .differentials article,
 .faq details,
@@ -527,6 +529,64 @@ li {
   border: 8px solid white;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+}
+
+.speaking {
+  background:
+    radial-gradient(circle at 84% 8%, rgba(15, 95, 138, 0.14), transparent 32%),
+    linear-gradient(135deg, #ffffff 0%, #f4ecdf 100%);
+}
+
+.speaking-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.1fr) repeat(2, minmax(240px, 0.85fr));
+  gap: 18px;
+}
+
+.speaking-card {
+  padding: 30px;
+}
+
+.speaking-card.featured {
+  color: white;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+}
+
+.speaking-card.featured h3,
+.speaking-card.featured p {
+  color: white;
+}
+
+.speaking-card.featured .card-icon {
+  color: var(--navy);
+  background: white;
+}
+
+.speaking-card ul {
+  margin: 18px 0 0;
+  padding-left: 20px;
+}
+
+.speaking-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 26px;
+  border: 1px solid rgba(15, 95, 138, 0.18);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--soft-shadow);
+}
+
+.speaking-cta p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.06rem;
+  font-weight: 850;
 }
 
 .responsible {
@@ -723,8 +783,13 @@ li {
   .cards-grid,
   .cards-grid.four,
   .values-grid,
+  .speaking-grid,
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .speaking-card.featured {
+    grid-column: 1 / -1;
   }
 }
 
@@ -757,9 +822,14 @@ li {
   .cards-grid.four,
   .mvv-grid,
   .values-grid,
+  .speaking-grid,
   .steps,
   .compare-grid {
     grid-template-columns: 1fr;
+  }
+
+  .speaking-card.featured {
+    grid-column: auto;
   }
 
   .footer {
@@ -780,6 +850,7 @@ li {
         <a href="#missao">Missão</a>
         <a href="#solucoes">Soluções</a>
         <a href="#metodologia">Metodologia</a>
+        <a href="#palestras">Palestras</a>
         <a href="#diferenciais">Diferenciais</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
@@ -1072,6 +1143,58 @@ li {
           </p>
         </div>
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=82" alt="Dashboard financeiro e indicadores gerenciais" />
+      </section>
+
+      <section class="speaking" id="palestras">
+        <div class="section-heading">
+          <p class="section-label">Palestras, mentoria e monitoria empresarial</p>
+          <h2>Capacitações práticas para transformar dados, processos e indicadores em decisão.</h2>
+        </div>
+        <div class="speaking-grid">
+          <article class="speaking-card featured">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v10H4z" /><path d="M8 19h8" /><path d="M12 15v4" /></svg>
+            </span>
+            <h3>Workshops e treinamentos</h3>
+            <p>
+              Capacitações hands-on focadas em aplicação real, usando dados reais ou simulados e
+              entregas concretas ao final para equipes financeiras, administrativas e operacionais.
+            </p>
+          </article>
+          <article class="speaking-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m8 15 3-4 3 2 4-6" /></svg>
+            </span>
+            <h3>Temas abordados</h3>
+            <ul>
+              <li>Finanças, fluxo de caixa, DRE gerencial e centros de custo.</li>
+              <li>Power BI, dashboards executivos, indicadores e relatórios.</li>
+              <li>Excel avançado, Power Query, SQL e automação de rotinas.</li>
+              <li>Mapeamento de processos, gargalos e melhoria operacional.</li>
+            </ul>
+          </article>
+          <article class="speaking-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="7" r="4" /><circle cx="17" cy="8" r="3" /><path d="M3 21a5 5 0 0 1 10 0" /><path d="M14 19a4 4 0 0 1 7 2" /></svg>
+            </span>
+            <h3>Público-alvo</h3>
+            <ul>
+              <li>Pequenas e médias empresas.</li>
+              <li>Times financeiros e administrativos.</li>
+              <li>Áreas de BI, controladoria e operações.</li>
+              <li>Gestores e tomadores de decisão.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="speaking-cta">
+          <p>
+            “Ajudo empresas a organizarem seus dados, estruturarem seus números e tomarem decisões
+            com mais segurança, clareza e estratégia.”
+          </p>
+          <a class="btn primary" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
+            Solicitar proposta de palestra
+          </a>
+        </div>
       </section>
 
       <section class="differentials" id="diferenciais">
