@@ -76,7 +76,9 @@ img {
 .nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px 22px;
   margin-left: auto;
   color: #536176;
   font-size: 0.94rem;
@@ -87,7 +89,7 @@ img {
   color: var(--blue);
 }
 
-.header-cta,
+.nav-cta,
 .btn,
 .contact-form button {
   border: 0;
@@ -96,7 +98,7 @@ img {
   cursor: pointer;
 }
 
-.header-cta,
+.nav-cta,
 .btn.primary,
 .contact-form button {
   color: white;
@@ -104,7 +106,8 @@ img {
   box-shadow: 0 14px 32px rgba(7, 29, 58, 0.24);
 }
 
-.header-cta {
+.nav .nav-cta {
+  color: white;
   padding: 12px 18px;
 }
 
@@ -604,14 +607,13 @@ li {
     width: 92px;
   }
 
-  .header-cta {
-    margin-left: auto;
-    padding: 10px 12px;
-    font-size: 0.88rem;
-  }
-
   .nav {
     justify-content: flex-start;
+  }
+
+  .nav .nav-cta {
+    padding: 10px 14px;
+    font-size: 0.88rem;
   }
 
   .hero h1 {
@@ -645,10 +647,10 @@ li {
         <a href="#metodologia">Metodologia</a>
         <a href="#diferenciais">Diferenciais</a>
         <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
+          Falar com especialista
+        </a>
       </nav>
-      <a class="header-cta" href="https://wa.me/5531996242304" target="_blank" rel="noreferrer">
-        Falar com especialista
-      </a>
     </header>
 
     <main>
@@ -926,6 +928,7 @@ li {
           <div class="contact-info">
             <a href="mailto:lrtconsultoriafinanceira@gmail.com">lrtconsultoriafinanceira@gmail.com</a>
             <a href="tel:+5531996242304">+55 (31) 99624-2304</a>
+            <span>CNPJ: 66.915.052/0001-04</span>
             <span>Belo Horizonte - MG</span>
           </div>
         </div>
@@ -953,7 +956,7 @@ li {
 
     <footer class="footer">
       <img src="https://static.wixstatic.com/media/9aa7a5_d831c4834def414c93930142c5e7ff5f~mv2.png" alt="LRT Consultoria Financeira" />
-      <p>© 2026 LRT Consultoria Financeira. Todos os direitos reservados.</p>
+      <p>© 2026 LRT Consultoria Financeira. CNPJ: 66.915.052/0001-04. Todos os direitos reservados.</p>
     </footer>
 
     <script>
