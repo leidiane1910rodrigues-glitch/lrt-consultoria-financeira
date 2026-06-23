@@ -530,7 +530,81 @@ li {
 }
 
 .responsible {
-  background: var(--cream);
+  align-items: center;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(213, 170, 91, 0.18), transparent 34%),
+    linear-gradient(135deg, var(--cream) 0%, #ffffff 100%);
+}
+
+.responsible-heading {
+  max-width: 520px;
+}
+
+.responsible-heading p:not(.section-label) {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.responsible-card {
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.responsible-card p {
+  margin-bottom: 18px;
+}
+
+.credential-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 26px;
+}
+
+.credential-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 8px 12px;
+  color: var(--navy);
+  border: 1px solid rgba(15, 95, 138, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 95, 138, 0.07);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 20px;
+  color: white;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0a66c2, #074d93);
+  box-shadow: 0 16px 34px rgba(10, 102, 194, 0.26);
+  font-weight: 900;
+}
+
+.linkedin-button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.linkedin-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px rgba(10, 102, 194, 0.32);
 }
 
 .faq-list {
@@ -1038,11 +1112,14 @@ li {
       </section>
 
       <section class="responsible">
-        <div>
+        <div class="responsible-heading">
           <p class="section-label">Responsável pela gestão</p>
           <h2>Leidiane Rodrigues Teixeira</h2>
+          <p>
+            Consultoria conduzida com organização, conformidade e leitura prática dos dados da empresa.
+          </p>
         </div>
-        <div>
+        <div class="responsible-card">
           <p>
             Profissional formada em Administração pela Faculdade Estácio e graduanda em Engenharia de
             Produção pela Uniasselvi, com experiência em rotinas tributárias, administrativas,
@@ -1052,8 +1129,21 @@ li {
             Atua com organização, atenção aos detalhes e foco em conformidade legal, apoiando empresas
             na construção de rotinas mais eficientes e informações mais confiáveis.
           </p>
-          <a class="text-link" href="https://www.linkedin.com/in/leidiane-rodrigues-teixeira/" target="_blank" rel="noreferrer">
-            Ver perfil no LinkedIn
+          <div class="credential-list" aria-label="Principais competências">
+            <span>Administração</span>
+            <span>Engenharia de Produção</span>
+            <span>Rotinas fiscais</span>
+            <span>Gestão financeira</span>
+            <span>Power BI e processos</span>
+          </div>
+          <a class="linkedin-button" href="https://www.linkedin.com/in/leidiane-rodrigues-teixeira/" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.5 9.5V20" />
+              <path d="M6.5 5v.01" />
+              <path d="M11 20V9.5" />
+              <path d="M11 14c0-2.4 1.4-4.5 4-4.5s4 1.9 4 4.7V20" />
+            </svg>
+            Acessar LinkedIn profissional
           </a>
         </div>
       </section>
