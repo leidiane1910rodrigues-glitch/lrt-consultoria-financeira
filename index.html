@@ -310,6 +310,7 @@ li {
 }
 
 .purpose,
+.mvv,
 .digital,
 .method,
 .differentials,
@@ -341,6 +342,8 @@ li {
 .problem-card,
 .compare-grid article,
 .solution-card,
+.mvv-card,
+.value-card,
 .steps article,
 .differentials article,
 .faq details,
@@ -365,6 +368,55 @@ li {
   background: var(--cream);
 }
 
+.mvv {
+  background: linear-gradient(135deg, #ffffff 0%, #fff9ef 100%);
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.mvv-card,
+.value-card {
+  padding: 30px;
+}
+
+.mvv-card p,
+.value-card p {
+  margin-bottom: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 22px;
+  color: white;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  box-shadow: 0 14px 30px rgba(7, 29, 58, 0.18);
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -376,12 +428,16 @@ li {
 }
 
 .solution-card,
+.mvv-card,
+.value-card,
 .differentials article {
   padding: 28px;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .solution-card:hover,
+.mvv-card:hover,
+.value-card:hover,
 .differentials article:hover,
 .steps article:hover,
 .faq details:hover {
@@ -592,6 +648,7 @@ li {
   .numbers,
   .cards-grid,
   .cards-grid.four,
+  .values-grid,
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -624,6 +681,8 @@ li {
   .numbers,
   .cards-grid,
   .cards-grid.four,
+  .mvv-grid,
+  .values-grid,
   .steps,
   .compare-grid {
     grid-template-columns: 1fr;
@@ -644,6 +703,7 @@ li {
       </a>
       <nav class="nav" aria-label="Menu principal">
         <a href="#proposito">Propósito</a>
+        <a href="#missao">Missão</a>
         <a href="#solucoes">Soluções</a>
         <a href="#metodologia">Metodologia</a>
         <a href="#diferenciais">Diferenciais</a>
@@ -740,6 +800,96 @@ li {
               <li>Planilhas manuais que escondem riscos e retrabalho.</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section class="mvv" id="missao">
+        <div class="section-heading">
+          <p class="section-label">Essência da empresa</p>
+          <h2>Missão, visão e valores que orientam a atuação da LRT.</h2>
+        </div>
+        <div class="mvv-grid">
+          <article class="mvv-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v18" />
+                <path d="M5 12h14" />
+                <path d="m12 3 5 5" />
+                <path d="m12 3-5 5" />
+              </svg>
+            </span>
+            <h3>Missão</h3>
+            <p>
+              Organizar rotinas fiscais, financeiras e administrativas para que empresas tenham mais
+              controle, conformidade e clareza sobre seus resultados, transformando dados, processos
+              e indicadores em decisões mais seguras e estratégicas.
+            </p>
+          </article>
+          <article class="mvv-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </span>
+            <h3>Visão</h3>
+            <p>
+              Ser reconhecida como uma consultoria de confiança para pequenas e médias empresas que
+              desejam sair do improviso, estruturar sua gestão e tomar decisões com base em
+              informações claras, processos eficientes e acompanhamento próximo.
+            </p>
+          </article>
+        </div>
+        <div class="values-grid">
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 4 3.4 7 8 8 4.6-1 8-4 8-8V7l-8-4Z" /></svg>
+            </span>
+            <h3>Ética e conformidade</h3>
+            <p>Atuar com responsabilidade, respeito às normas legais e compromisso com a segurança das informações.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16" /><path d="M4 12h10" /><path d="M4 18h16" /></svg>
+            </span>
+            <h3>Clareza e transparência</h3>
+            <p>Traduzir números, obrigações e processos de forma simples, objetiva e compreensível para o cliente.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z" /><path d="M8 9h8" /><path d="M8 13h5" /></svg>
+            </span>
+            <h3>Organização e método</h3>
+            <p>Estruturar rotinas, documentos, controles e responsabilidades para reduzir retrabalho e aumentar a eficiência.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m8 15 3-4 3 2 4-6" /></svg>
+            </span>
+            <h3>Decisão baseada em dados</h3>
+            <p>Utilizar relatórios, indicadores, Power BI, Excel e análises gerenciais para apoiar decisões mais precisas.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0-9-9" /><path d="m12 7 3 5-3 5-3-5 3-5Z" /></svg>
+            </span>
+            <h3>Compromisso com resultado</h3>
+            <p>Buscar melhorias práticas que gerem economia de tempo, previsibilidade financeira e maior controle da operação.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M16 13a4 4 0 1 0 0-8" /><path d="M3 21a5 5 0 0 1 10 0" /><path d="M13 18a5 5 0 0 1 8 3" /></svg>
+            </span>
+            <h3>Atendimento humanizado</h3>
+            <p>Entender a realidade de cada empresa com escuta, cuidado e soluções personalizadas.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.7" /><path d="M20 12a8 8 0 0 1-13.7 5.7" /><path d="M17 3v4h-4" /><path d="M7 21v-4h4" /></svg>
+            </span>
+            <h3>Melhoria contínua</h3>
+            <p>Aprimorar processos, controles e ferramentas para acompanhar a evolução do negócio.</p>
+          </article>
         </div>
       </section>
 
@@ -857,18 +1007,30 @@ li {
         </div>
         <div class="cards-grid four">
           <article>
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" /><path d="M8 10h8" /><path d="M8 14h5" /></svg>
+            </span>
             <h3>SAP e ERP</h3>
             <p>Vivência na gestão de processos fiscais e administrativos em sistemas empresariais.</p>
           </article>
           <article>
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15v-4" /><path d="M12 15V8" /><path d="M16 15v-6" /></svg>
+            </span>
             <h3>Power BI e Excel</h3>
             <p>Dashboards, tabelas dinâmicas, automações e relatórios para leitura gerencial.</p>
           </article>
           <article>
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3" /><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" /><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" /></svg>
+            </span>
             <h3>SQL e dados</h3>
             <p>Extração e manipulação de dados para análises mais detalhadas e confiáveis.</p>
           </article>
           <article>
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h5" /><path d="M15 7h5" /><circle cx="12" cy="7" r="3" /><path d="M4 17h11" /><path d="M21 17h-1" /><circle cx="17" cy="17" r="3" /></svg>
+            </span>
             <h3>Processos</h3>
             <p>Organização de fluxos, arquivos, contratos, rotinas internas e conformidade.</p>
           </article>
@@ -890,6 +1052,9 @@ li {
             Atua com organização, atenção aos detalhes e foco em conformidade legal, apoiando empresas
             na construção de rotinas mais eficientes e informações mais confiáveis.
           </p>
+          <a class="text-link" href="https://www.linkedin.com/in/leidiane-rodrigues-teixeira/" target="_blank" rel="noreferrer">
+            Ver perfil no LinkedIn
+          </a>
         </div>
       </section>
 
@@ -929,6 +1094,7 @@ li {
           <div class="contact-info">
             <a href="mailto:lrtconsultoriafinanceira@gmail.com">lrtconsultoriafinanceira@gmail.com</a>
             <a href="tel:+5531996242304">+55 (31) 99624-2304</a>
+            <a href="https://www.linkedin.com/in/leidiane-rodrigues-teixeira/" target="_blank" rel="noreferrer">LinkedIn Leidiane Rodrigues Teixeira</a>
             <span>CNPJ: 66.915.052/0001-04</span>
             <span>Belo Horizonte - MG</span>
           </div>
